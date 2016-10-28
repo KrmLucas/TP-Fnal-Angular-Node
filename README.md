@@ -17,5 +17,3 @@
 
 	NOTA: mongodb confirgurada en el puerto por defecto (localhost:27017)
 
-
-# TP-Fnal-Angular-Node
