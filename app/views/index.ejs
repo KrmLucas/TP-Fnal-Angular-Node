@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/core/css/main.css" media="screen" title="no title">
+        <link rel="stylesheet" href="/subastas/css/subastas.css" media="screen" title="no title">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title><%=title%></title>
+    </head>
+    <body>
+    <navigation></navigation>
+    <section ng-view></section>
+
+    <!--Librerias-->
+    <script type="text/javascript" src="/lib/angular/angular.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/lib/angular-route/angular-route.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/lib/angular-resource/angular-resource.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/lib/angular-bootstrap/ui-bootstrap.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/lib/angular-socket-io/socket.js" charset="utf-8"></script>
+
+    <!--Soket.io-->
+    <script src="/socket.io/socket.io.js"></script>
+
+
+    <!--navigation-->
+    <script type="text/javascript" src="/navigation/js/navComp.js" charset="utf-8"></script>
+
+    <!-- Directivas propias-->
+    <script type="text/javascript" src="/directives/goToOnEnter/goToOnEnter.js"></script>
+    <script type="text/javascript" src="/directives/myDelayDirective/myDelayDirective.js"></script>
+
+    <!--Subastas-->
+    <script type="text/javascript" src="/subastas/js/subastasModule.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/subastas/js/subastasSrv.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/subastas/js/controllers/subastasCtrl.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/subastas/js/controllers/listSubastasCtrl.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/subastas/js/controllers/pujasCtrl.js" charset="utf-8"></script>
+
+    <!--Main module && routes-->
+    <script type="text/javascript" src="/mainRoutes.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/app.js" charset="utf-8"></script>
+    </body>
+</html>

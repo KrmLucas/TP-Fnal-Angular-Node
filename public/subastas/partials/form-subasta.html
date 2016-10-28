@@ -1,0 +1,66 @@
+<section class="container">
+    <div class="jumbotron" ng-hide="flagForm">
+         <h1>{{subasta._id ? 'Editar Subasta' : 'Organiza una Subasta'}}</h1>
+         <h3>No olvides configurar su fecha y hora</h3><br>
+         <button type="button" class="btn btn-lg btn-primary" name="button" ng-click="seeForm()">{{subasta._id ? 'Editar - Eliminar' :'Completa el formulario'}}</button>
+    </div>
+<div class="row" ng-show="flagForm">
+    <div class="col-md-7">
+
+        <form novalidate="true" name="subastasForm" class="myForm">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h2 style="text-align:center">Completa los campos requeridos</h2>
+                    <div class="alert alert-info" ng-bind="message" ng-show="message"></div>
+                    <div class="alert alert-error" ng-bind="error" ng-show="error"></div>
+                </div>
+
+                <div class="panel-body my-panel-body">
+                        <div class="form-group">
+                          <label for="producto">Producto</label>
+                          <input name="producto" type="text" ng-model="subasta.producto" id="producto" class="form-control" placeholder="Nombre del producto" required>
+                          <span ng-show="subastasForm.producto.$error.required">El nombe del producto es requerido</span>
+                        </div>
+
+                        <div class="form-group" style="margin-top:2em">
+                          <label class="control-label" for="initCost">Valor inicial</label>
+                          <input name="initCost" type="number" ng-model="subasta.initCost" id="initCost" class="form-control" placeholder="Valor inicial del producto"go-to-on-enter="input[name='fecha']" required>
+                          <span ng-show="subastasForm.initCost.$error.required">El valor inicial para la subasta es requerido</span>
+                        </div>
+
+
+                        <!--Date piker y time piker-->
+                        <div style="margin-top:2.5em">
+                            <pre>Fecha: <em>{{subasta.fecha | date:'fullDate' }}</em> Hora: <em>{{subasta.fecha | date:'shortTime' }}<em></pre>
+                        </div>
+
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="input-group" style="margin-top: 5px;">
+                                        <input name="fecha" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="subasta.fecha" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                        <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div uib-timepicker class="myForm timePk" ng-model="subasta.fecha" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+                                </td>
+                            </tr>
+                        </table>
+
+                            <hr>
+
+                        <div class="form-group">
+                            <input type="button" ng-click="reset()" value="Nuevo" class="btn btn-primary"/>
+                            <input type="submit" ng-click="update()"                            value="{{subasta._id ? 'Update' : 'Create'}}"  ng-disabled="subastasForm.$invalid" class="btn btn-primary"/>
+                            <input ng-show="mostrarDelete" type="button" ng-click="delete()"   value="Delete" class="btn btn-primary"/>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+</section>

@@ -1,0 +1,94 @@
+<section class="container">
+    <div ng-show="flagComenzar">
+        <h2 ng-bind="subasta.producto"></h2>
+        <h4>Costo inicial:  $<span ng-bind="subasta.initCost"></span></h4>
+        <h4>Fecha y hora de inicio de la subasta: <span ng-bind="subasta.fecha | date: 'short'"></span></h4>
+    </div>
+
+    <!--<my-time-directive fecha="fecha" funcion="probarSiFunciona()"> </my-time-directive>
+    <div ng-show="myFlag"><h1>Probar si funciona</h1></div>-->
+
+    <div class="jumbotron" ng-hide="flagJumbotron">
+        <h1 ng-bind="subasta.producto"></h1>
+        <div>
+            <h3>Costo inicial:  $<span ng-bind="subasta.initCost"></span></h3>
+            <h3>Fecha y hora de inicio de la subasta: <span ng-bind="subasta.fecha | date: 'short'"></span></h3>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row" ng-show="itsTheDay">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3>Ingrese su nombre de usuario para participar de la subasta</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="simple-form myForm">
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="username">
+                            <span class="input-group-btn"><button type="button" class="btn btn-primary"name="comenzar" ng-click="comenzar()">Comenzar!</button></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div ng-show="flagComenzar">
+        <div ng-show="subastaNoFinalizada">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h4>Valor Actual: </h4>
+                        </div>
+                        <div class="panel-body">
+                            <h4 style="text-align:center">{{valActual}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h4>Tiempo Restante para Ofertar: </h4>
+                        </div>
+                        <div class="panel-body">
+                            <h4 style="text-align:center">{{tiempoRes}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-5 col-md-offset-3">
+                    <table class="table center">
+                        <tr>
+                            <td><button style="width:6em;"type="button" class="btn btn-primary" ng-click="pujar(10)">+ $10</button></td>
+                            <td><button style="width:6em;"type="button" class="btn btn-primary"style="width:6em;" ng-click="pujar(20)">+ $20</button></td>
+                            <td><button style="width:6em;"type="button" class="btn btn-primary" ng-click="pujar(50)">+ $50</button></td>
+                            <td><button style="width:6em;"type="button" class="btn btn-primary" ng-click="pujar(100)">+ $100</button></td>
+                            <td><button style="width:6em;"type="button" class="btn btn-primary" ng-click="pujar(200)">+ $200</button></td>
+                        </tr>
+                        <tr>
+                            <td><button style="width:6em;"type="button" class="btn btn-primary" ng-click="pujar(500)">+ $500</button></td>
+                            <td><button style="width:6em;"type="button" class="btn btn-primary" ng-click="pujar(1000)">+ $1000</button></td>
+                            <td><button style="width:6em;"type="button" class="btn btn-primary" ng-click="pujar(2000)">+ $2000</button></td>
+                            <td><button style="width:6em;"type="button" class="btn btn-primary" ng-click="pujar(5000)">+ $5000</button></td>
+                            <td><button style="width:6em;"type="button" class="btn btn-primary" ng-click="pujar(10000)">+ $10000</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div ng-hide="subastaNoFinalizada" class="alert alert-dismissible alert-success">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <h3><strong>Listo!</strong></h3>
+              <h1>{{message}}</h1>
+        </div>
+    </div>
+</section>

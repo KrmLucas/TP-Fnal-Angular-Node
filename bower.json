@@ -1,0 +1,11 @@
+{
+  "name": "subastas-online",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-bootstrap": "^2.2.0",
+    "angular-resource": "^1.5.8",
+    "angular-socket-io": "^0.7.0"
+  }
+}

@@ -1,0 +1,46 @@
+
+
+.timePk{
+    margin-left: 3em;
+    margin-top: 1em;
+}
+table tr td h4{
+    width: 15em;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+table tr td input{
+    width: 18em;
+    height: 3em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    padding-left: 1em;
+    border-radius: 5px;
+}
+table tr td a {
+    width: 5em;
+    padding-left: 2.5em;
+}
+/*
+.valorPujas{
+    height: 2em;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 1em;
+    margin-right: 1em;
+    border-radius: 5%;
+    background-color: rgb(21, 214, 235);
+    border-color: rgb(21, 214, 235);
+
+}
+.full button span {
+  background-color: limegreen;
+  border-radius: 32px;
+  color: black;
+}
+.partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
+}
