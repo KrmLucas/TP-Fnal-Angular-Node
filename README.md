@@ -12,6 +12,12 @@
 	Aplicacion mean sencilla de subastas online con soket.io
 	
 	git clone git@github.com:KrmLucas/TP-Fnal-Angular-Node.git 
+	
+	crear el archivo .bowerrc con el siguiente contenido: 
+	{
+		"directory": "public/lib"
+	}
+	
 	npm install && bower install
 	node server
 
